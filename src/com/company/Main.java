@@ -29,8 +29,7 @@ public class Main {
         // поиск всех вхождений ключевых фраз в источник
         for (String keyWord : keyWords) {
             // паттерн с look ahead и negative look behind подходом
-            final Matcher m = Pattern.compile(
-                            "[.!?](?:(?!\\s" + keyWord + "\\s|[.!?]).)*\\s" + keyWord + "\\s(?:(?![.!?]).)*[.!?]")
+            final Matcher m = Pattern.compile("[.!?](?:(?!\\s" + keyWord + "\\s|[.!?]).)*\\s" + keyWord + "\\s(?:(?![.!?]).)*[.!?]")
                     .matcher(normalizedBook);
             int counter = 0;
             while (m.find()) {
